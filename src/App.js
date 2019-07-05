@@ -35,9 +35,22 @@ const App = () => (
 
       <hr />
 
+      <Route path='/atlantic/ocean' render={() => (
+        <div>
+          <h3>Atlantic Ocean - Again!</h3>
+          <p>
+            Also know as "The Pond."
+          </p>
+        </div>
+      )} />
       <Route path='/atlantic' component={Atlantic} />
       <Route path='/pacific' component={Pacific} />
       <Route path='/black-sea' component={BlackSea} />
+      <Route exact path='/' render={() => (
+        <h3>
+          Select a body of Saline water.
+        </h3>
+      )} />
     </div>
   </Router>
 );
