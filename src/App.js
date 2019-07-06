@@ -4,6 +4,7 @@ import {
   Route,
   Link,
   Redirect,
+  Switch,
 } from 'react-router-dom';
 
 const App = () => (
@@ -35,6 +36,7 @@ const App = () => (
 
       <hr />
 
+    <Switch>
       <Route path='/atlantic/ocean' render={() => (
         <div>
           <h3>Atlantic Ocean - Again!</h3>
@@ -51,6 +53,14 @@ const App = () => (
           Select a body of Saline water.
         </h3>
       )} />
+      <Route render={({ location }) => (
+        <div className='ui inverted red segment'>
+          <h3>
+            Error! No matches for <code>{location.pathname}</code>
+          </h3>
+        </div>
+      )} />
+    </Switch>
     </div>
   </Router>
 );
